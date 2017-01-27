@@ -1,0 +1,18 @@
+{
+  "name": "uuid-meta",
+  "description": "metadata about UUIDs",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "perjury test/*-test.js"
+  },
+  "dependencies": {
+    "debug": "^2.6.0",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "perjury": "^0.4.2"
+  },
+  "repository": "fuzzy-ai/uuid-meta",
+  "main": "./index.js",
+  "license": "Apache-2.0"
+}
