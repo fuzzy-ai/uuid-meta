@@ -1,12 +1,12 @@
 uuid-meta
 =========
 
-Gets metadata about a [http://en.wikipedia.org/wiki/UUID](UUID).
+Gets metadata about a [UUID](https://en.wikipedia.org/wiki/UUID).
 
 License
 -------
 
-Copyright 2017 Fuzzy.ai
+Copyright 2017 [Fuzzy.ai](https://fuzzy.ai/)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -37,10 +37,19 @@ Calling the function will return an object with properties about the UUID.
   console.log(metadata.version); // 4
 ```
 
-The properties of the object returned are:
+The interesting properties of the object returned are:
 
 * `version`: The version of the UUID standard used. Should be an integer
   between 0 and 5.
 * `time_unix`: For v1 UUIDs, the milliseconds since 1 Jan 1970 when the UUID
   was minted. Probably not valid for other versions.
-* `mac_address`: For v1 UUIDs, the MAC address used for minting the UUID.
+* `mac_address`: For v1 UUIDs, the [MAC address](https://en.wikipedia.org/wiki/MAC_address)
+  used for minting the UUID. It's a string of 6 hexadecimal bytes separated by
+  colons (':').
+* `time`: Time value for all UUIDs, counting 100 nanosecond periods since
+  15 Oct 1582. Might not be an actual time for most types of UUIDs.
+* `node`: Node identifier for minting of UUIDs. May or may not be a MAC address.
+* `clock_seq`: Clock sequence value.
+
+There are a few other properties that come from the parsing process, but
+they're probably not interesting unless you're debugging the parsing process.
